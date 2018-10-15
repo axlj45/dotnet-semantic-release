@@ -41,7 +41,7 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
         {
             var repository = _repository.GetRepositoryReference<Repository>();
 
-            var lastReleaseCommit = repository.Commits.FirstOrDefault(o => o.Sha.Equals(lastRelease.Sha));
+            var lastReleaseCommit = repository.Commits.FirstOrDefault(o => o.Sha.Equals(lastRelease?.Sha));
             int index = 0;
 
             foreach (var commit in repository.Commits)
