@@ -4,14 +4,14 @@
     <OutputType>Exe</OutputType>
     <ToolCommandName>semantic-release</ToolCommandName>
     <PackageId>AxlSoft.SemanticRelease.Tool</PackageId>
-    <PackageVersion>3.0.0</PackageVersion>
+    <PackageVersion>1.0.0</PackageVersion>
     <Authors>AJ Leonard</Authors>
     <Description>Version package per semantic version specification.</Description>
     <Copyright>AJ Leonard</Copyright>
     <PackageTags>semantic-versioning semantic-release</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackAsTool>True</PackAsTool>
-    <Version>3.0.0</Version>
+    <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="LibGit2Sharp" Version="0.25.3" />
