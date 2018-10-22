@@ -1,0 +1,2 @@
+# Dotnet Semantic Release
+WIP

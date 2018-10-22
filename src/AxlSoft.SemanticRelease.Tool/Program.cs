@@ -4,7 +4,7 @@ using AxlSoft.SemanticRelease.CommitAnalyzer;
 
 namespace AxlSoft.SemanticRelease.Tool
 {
-    [Command(Description = "My global command line tool.")]
+    [Command(Description = "Dotnet Semantic Release")]
     class Program
     {
         public static int Main(string[] args) => CommandLineApplication.Execute<Program>(args);
