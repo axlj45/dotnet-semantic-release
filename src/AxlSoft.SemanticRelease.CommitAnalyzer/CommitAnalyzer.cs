@@ -24,13 +24,13 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
 
             var msg = "This is the first release.";
 
-            // Console.WriteLine($"Last Release: {lastRelease?.Version.ToString() ?? msg}");
+            Console.WriteLine($"Last Release: {lastRelease?.Version.ToString() ?? msg}");
 
             var commitsSinceRelease = CommitsSinceLastRelease(lastRelease).ToList();
 
             var releaseType = new CommitMessageParser(commitsSinceRelease).GetReleaseType();
 
-            // Console.WriteLine($"Release type: {releaseType}");
+            Console.WriteLine($"Release type: {releaseType}");
 
             var nextVersion = new VersionCalculator(lastRelease, releaseType).GetNextVersion();
 

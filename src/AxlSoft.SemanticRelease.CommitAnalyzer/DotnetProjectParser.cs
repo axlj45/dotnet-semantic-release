@@ -9,23 +9,32 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
 {
     public class DotnetProjectWrapper
     {
-        private readonly string _projPath;
+        public string ProjectPath { get; }
         private readonly Project _project;
-        private readonly ReleaseRepository _gitRepo;
         private string _version;
 
         public DotnetProjectWrapper(string projectPath)
         {
-            _projPath = FindProjPath(projectPath);
-            _project = DotnetCoreBuildTools.GetCoreProject(_projPath);
-            _gitRepo = new GitRepositorySingleton().GetRepository();
+            var workingDir = Path.GetDirectoryName(projectPath) + "/";
+            ProjectPath = FindProjPath(projectPath);
+            _project = DotnetCoreBuildTools.GetCoreProject(ProjectPath);
+        }
+
+        public string GetVersion()
+        {
+            var props = _project.Xml.PropertyGroups.First(); // Need to make sure no other property groups exist with version in them.
+
+            var version = props.Properties.Where(o => o.Name.Equals("Version")).FirstOrDefault();
+            var packageVer = props.Properties.FirstOrDefault(o => o.Name.Equals("PackageVersion"));
+
+            return version?.Value ?? packageVer?.Value ?? string.Empty;
         }
 
         public void SetVersion(string version)
         {
             _version = version;
 
-            var props = _project.Xml.PropertyGroups.First(); // Need to make sure no other property groups exist with versioi in them.
+            var props = _project.Xml.PropertyGroups.First(); // Need to make sure no other property groups exist with version in them.
             props.SetProperty("Version", _version);
 
             var packageVer = props.Properties.FirstOrDefault(o => o.Name.Equals("PackageVersion"));
@@ -34,15 +43,7 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
             _project.Save();
         }
 
-        public void PrepareForRelease()
-        {
-            var repo = _gitRepo.GetRepositoryReference<Repository>();
 
-            repo.Index.Add(_projPath.ReplaceFirst(Directory.GetParent(_gitRepo.RepositoryPath).FullName + "/", ""));
-            var signature = new Signature("jenkins", "jenkins", DateTimeOffset.UtcNow);
-            var vCommit = repo.Commit($"chore(release): Releasing {_version}", signature, signature);
-            var vTag = repo.ApplyTag(_version);
-        }
 
         private string FindProjPath(string currentDir, int maxDepth = 3, int currentDepth = 0)
         {
