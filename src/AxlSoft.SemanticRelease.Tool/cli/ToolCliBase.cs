@@ -17,7 +17,6 @@ namespace AxlSoft.SemanticRelease.Tool.cli
 
         protected virtual int OnExecute(CommandLineApplication app)
         {
-            Console.WriteLine($"BASE Project: {TargetProject}, Branch:  {ReleaseBranch}");
             app.ShowHelp();
             return 0;
         }

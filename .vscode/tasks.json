@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/dotnet-semver/dotnet-semver.csproj"
+                "${workspaceFolder}/src/AxlSoft.SemanticRelease.Tool/AxlSoft.SemanticRelease.Tool.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

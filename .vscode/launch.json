@@ -10,11 +10,13 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/dotnet-semver/bin/Debug/netcoreapp2.1/dotnet-semver.dll",
+            "program": "${workspaceFolder}/src/AxlSoft.SemanticRelease.Tool/bin/Debug/netcoreapp2.1/AxlSoft.SemanticRelease.Tool.dll",
             "args": [
-                "${workspaceFolder}/src/dotnet-semver"
+                "release",
+                "--project-path",
+                "${workspaceFolder}/src/AxlSoft.SemanticRelease.Tool"
             ],
-            "cwd": "${workspaceFolder}/src/dotnet-semver",
+            "cwd": "${workspaceFolder}/src/AxlSoft.SemanticRelease.Tool",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
             "console": "internalConsole",
             "stopAtEntry": false,
