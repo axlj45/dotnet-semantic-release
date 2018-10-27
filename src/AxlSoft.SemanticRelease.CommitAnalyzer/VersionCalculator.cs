@@ -46,7 +46,7 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
                     break;
 
                 default:
-                    throw new Exception($"There have been no releasable commits since v{lastVersion}.");
+                    throw new NoOpReleaseException(lastVersion);
             }
 
             return new SemanticVersion($"{nextMajor}.{nextMinor}.{nextPatch}");

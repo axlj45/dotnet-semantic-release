@@ -34,6 +34,8 @@ namespace AxlSoft.SemanticRelease.CommitAnalyzer
 
             var nextVersion = new VersionCalculator(lastRelease, releaseType).GetNextVersion();
 
+            Console.WriteLine($"Next version: {nextVersion}");
+
             return new Release(nextVersion.ToString(), null);
         }
 

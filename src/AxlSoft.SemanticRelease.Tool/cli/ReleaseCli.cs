@@ -1,5 +1,6 @@
 using System;
 using AxlSoft.SemanticRelease.CommitAnalyzer;
+using AxlSoft.SemanticRelease.Extensibility.Model;
 using McMaster.Extensions.CommandLineUtils;
 
 namespace AxlSoft.SemanticRelease.Tool.cli
@@ -8,6 +9,9 @@ namespace AxlSoft.SemanticRelease.Tool.cli
     public class ReleaseCli : ToolCliBase
     {
         private SemanticReleaseEntry Parent { get; set; }
+
+        [Option("-f|--fail-on-no-release <branch>", Description = "Return non-zero exit code when no release is required.")]
+        public bool ThrowOnNoOp { get; set; }
 
         protected override int OnExecute(CommandLineApplication app)
         {
@@ -30,6 +34,11 @@ namespace AxlSoft.SemanticRelease.Tool.cli
 
                 var releaser = new ProjectReleaser(project);
                 releaser.PrepareForRelease();
+            }
+            catch (NoOpReleaseException ex)
+            {
+                Console.WriteLine($"There have been no releasable commits since v{ex.LastVersion}");
+                return ThrowOnNoOp ? 1 : 0;
             }
             catch (Exception ex)
             {
