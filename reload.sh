@@ -1,3 +1,3 @@
 dotnet build **/*.sln
-dotnet tool uninstall --global SemanticRelease.Tool
-dotnet tool install --global SemanticRelease.Tool
+dotnet tool uninstall --global SemanticRelease.GlobalTool
+dotnet tool install --global SemanticRelease.GlobalTool

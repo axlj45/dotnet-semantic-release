@@ -1,16 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
-    <OutputType>Exe</OutputType>
-    <ToolCommandName>semantic-release</ToolCommandName>
-    <PackageId>SemanticRelease.Tool</PackageId>
-    <PackageVersion>1.3.0</PackageVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>AJ Leonard</Authors>
     <Description>Version package per semantic version specification.</Description>
     <Copyright>AJ Leonard</Copyright>
-    <PackageTags>semantic-versioning semantic-release</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackAsTool>True</PackAsTool>
     <Version>1.3.0</Version>
   </PropertyGroup>
   <ItemGroup>

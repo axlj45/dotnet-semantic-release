@@ -3,7 +3,7 @@ using System.Reflection;
 using SemanticRelease.CommitAnalyzer;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace SemanticRelease.Tool.CLI
+namespace SemanticRelease.Core.CLI
 {
     [Command("semantic-release", Description = "Semantic Release")]
     [VersionOptionFromMember("--version", MemberName = nameof(GetVersion))]

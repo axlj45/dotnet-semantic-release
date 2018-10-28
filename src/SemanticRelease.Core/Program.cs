@@ -1,10 +1,10 @@
 using McMaster.Extensions.CommandLineUtils;
-using SemanticRelease.Tool.CLI;
+using SemanticRelease.Core.CLI;
 
-namespace SemanticRelease.Tool
+namespace SemanticRelease.Core
 {
     [Command(Description = "Semantic Release")]
-    class Program
+    public class Program
     {
         public static int Main(string[] args) => CommandLineApplication.Execute<SemanticReleaseEntry>(args);
     }

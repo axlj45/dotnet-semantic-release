@@ -3,7 +3,7 @@ using System.IO;
 using SemanticRelease.CommitAnalyzer;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace SemanticRelease.Tool.CLI
+namespace SemanticRelease.Core.CLI
 {
     [Command(Description = "Get version of target project")]
     public class CurrentVersionCli : ToolCliBase

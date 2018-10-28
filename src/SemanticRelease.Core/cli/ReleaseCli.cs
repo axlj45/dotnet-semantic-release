@@ -3,7 +3,7 @@ using SemanticRelease.CommitAnalyzer;
 using SemanticRelease.Extensibility.Model;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace SemanticRelease.Tool.CLI
+namespace SemanticRelease.Core.CLI
 {
     [Command(Description = "Create new version and prepare for release")]
     public class ReleaseCli : ToolCliBase
