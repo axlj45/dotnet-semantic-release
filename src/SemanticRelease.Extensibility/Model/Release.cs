@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace AxlSoft.SemanticRelease.Extensibility.Model
+namespace SemanticRelease.Extensibility.Model
 {
     public class Release
     {

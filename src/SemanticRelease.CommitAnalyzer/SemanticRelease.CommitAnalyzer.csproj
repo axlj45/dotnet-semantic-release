@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\AxlSoft.SemanticRelease.Extensibility\AxlSoft.SemanticRelease.Extensibility.csproj" />
+    <ProjectReference Include="..\SemanticRelease.Extensibility\SemanticRelease.Extensibility.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

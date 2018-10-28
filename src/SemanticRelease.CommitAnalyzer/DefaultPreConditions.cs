@@ -1,9 +1,9 @@
 using System;
-using AxlSoft.SemanticRelease.Extensibility;
-using AxlSoft.SemanticRelease.Extensibility.Model;
+using SemanticRelease.Extensibility;
+using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
 
-namespace AxlSoft.SemanticRelease.CommitAnalyzer
+namespace SemanticRelease.CommitAnalyzer
 {
     public class DefaultPreConditions : IPreConditionVerifier
     {

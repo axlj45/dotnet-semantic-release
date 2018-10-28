@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using AxlSoft.SemanticRelease.Extensibility;
-using AxlSoft.SemanticRelease.Extensibility.Model;
+using SemanticRelease.Extensibility;
+using SemanticRelease.Extensibility.Model;
 
-namespace AxlSoft.SemanticRelease.CommitAnalyzer
+namespace SemanticRelease.CommitAnalyzer
 {
     internal class CommitMessageParser
     {

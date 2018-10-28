@@ -1,11 +1,11 @@
 using System;
 using System.IO;
 using System.Linq;
-using AxlSoft.SemanticRelease.Extensibility.Model;
+using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
 using Microsoft.Build.Evaluation;
 
-namespace AxlSoft.SemanticRelease.CommitAnalyzer
+namespace SemanticRelease.CommitAnalyzer
 {
     public class DotnetProjectWrapper
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace AxlSoft.SemanticRelease.Tool.cli
+namespace SemanticRelease.Tool.CLI
 {
     [HelpOption("--help")]
     public class ToolCliBase

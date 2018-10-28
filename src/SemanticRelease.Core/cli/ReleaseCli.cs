@@ -1,9 +1,9 @@
 using System;
-using AxlSoft.SemanticRelease.CommitAnalyzer;
-using AxlSoft.SemanticRelease.Extensibility.Model;
+using SemanticRelease.CommitAnalyzer;
+using SemanticRelease.Extensibility.Model;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace AxlSoft.SemanticRelease.Tool.cli
+namespace SemanticRelease.Tool.CLI
 {
     [Command(Description = "Create new version and prepare for release")]
     public class ReleaseCli : ToolCliBase

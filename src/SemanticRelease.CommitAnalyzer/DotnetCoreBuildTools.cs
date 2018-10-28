@@ -5,7 +5,7 @@ using System.IO;
 using Microsoft.Build.Evaluation;
 using Microsoft.Build.Utilities;
 
-namespace AxlSoft.SemanticRelease.CommitAnalyzer
+namespace SemanticRelease.CommitAnalyzer
 {
     // Pulled from https://daveaglick.com/posts/running-a-design-time-build-with-msbuild-apis
     public static class DotnetCoreBuildTools

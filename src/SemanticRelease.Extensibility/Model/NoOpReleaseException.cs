@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace AxlSoft.SemanticRelease.Extensibility.Model
+namespace SemanticRelease.Extensibility.Model
 {
     [Serializable]
     public class NoOpReleaseException : Exception

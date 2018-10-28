@@ -1,7 +1,7 @@
 using McMaster.Extensions.CommandLineUtils;
-using AxlSoft.SemanticRelease.Tool.cli;
+using SemanticRelease.Tool.CLI;
 
-namespace AxlSoft.SemanticRelease.Tool
+namespace SemanticRelease.Tool
 {
     [Command(Description = "Semantic Release")]
     class Program

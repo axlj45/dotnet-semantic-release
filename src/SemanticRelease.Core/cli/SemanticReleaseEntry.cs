@@ -1,9 +1,9 @@
 using System;
 using System.Reflection;
-using AxlSoft.SemanticRelease.CommitAnalyzer;
+using SemanticRelease.CommitAnalyzer;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace AxlSoft.SemanticRelease.Tool.cli
+namespace SemanticRelease.Tool.CLI
 {
     [Command("semantic-release", Description = "Semantic Release")]
     [VersionOptionFromMember("--version", MemberName = nameof(GetVersion))]

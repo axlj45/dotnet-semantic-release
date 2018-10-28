@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxlSoft.SemanticRelease.CommitAnalyzer", "AxlSoft.SemanticRelease.CommitAnalyzer\AxlSoft.SemanticRelease.CommitAnalyzer.csproj", "{55AE256E-F66A-4309-9A15-6B9405F1246A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.CommitAnalyzer", "SemanticRelease.CommitAnalyzer\SemanticRelease.CommitAnalyzer.csproj", "{55AE256E-F66A-4309-9A15-6B9405F1246A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxlSoft.SemanticRelease.Extensibility", "AxlSoft.SemanticRelease.Extensibility\AxlSoft.SemanticRelease.Extensibility.csproj", "{CBBC497D-FB07-4882-B7DC-3B7EAC014573}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.Extensibility", "SemanticRelease.Extensibility\SemanticRelease.Extensibility.csproj", "{CBBC497D-FB07-4882-B7DC-3B7EAC014573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxlSoft.SemanticRelease.Tool", "AxlSoft.SemanticRelease.Tool\AxlSoft.SemanticRelease.Tool.csproj", "{0C2E13AE-2B5C-42A9-94FD-F6CEC07A41B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.Core", "SemanticRelease.Core\SemanticRelease.Core.csproj", "{0C2E13AE-2B5C-42A9-94FD-F6CEC07A41B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

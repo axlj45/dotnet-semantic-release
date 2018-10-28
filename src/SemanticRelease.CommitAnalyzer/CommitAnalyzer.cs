@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using AxlSoft.SemanticRelease.Extensibility;
-using AxlSoft.SemanticRelease.Extensibility.Model;
+using SemanticRelease.Extensibility;
+using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
 using SemanticVersion = SemVer.Version;
 
-namespace AxlSoft.SemanticRelease.CommitAnalyzer
+namespace SemanticRelease.CommitAnalyzer
 {
     public class CommitAnalyzer : ICommitAnalyzer
     {

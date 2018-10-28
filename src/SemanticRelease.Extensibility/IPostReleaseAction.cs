@@ -1,4 +1,4 @@
-namespace AxlSoft.SemanticRelease.Extensibility
+namespace SemanticRelease.Extensibility
 {
     public interface IPostReleaseAction
     {

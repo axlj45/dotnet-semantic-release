@@ -1,4 +1,4 @@
-namespace AxlSoft.SemanticRelease.Extensibility.Model
+namespace SemanticRelease.Extensibility.Model
 {
     public class ReleaseCommit
     {

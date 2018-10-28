@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using AxlSoft.SemanticRelease.CommitAnalyzer;
+using SemanticRelease.CommitAnalyzer;
 using McMaster.Extensions.CommandLineUtils;
 
-namespace AxlSoft.SemanticRelease.Tool.cli
+namespace SemanticRelease.Tool.CLI
 {
     [Command(Description = "Get version of target project")]
     public class CurrentVersionCli : ToolCliBase
