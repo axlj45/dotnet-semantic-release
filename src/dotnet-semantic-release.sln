@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.Core", "Sem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.GlobalTool", "SemanticRelease.GlobalTool\SemanticRelease.GlobalTool.csproj", "{A06BE319-8084-43A0-9C97-F7532E2482C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticRelease.Tool", "SemanticRelease.Tool\SemanticRelease.Tool.csproj", "{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,17 @@ Global
 		{A06BE319-8084-43A0-9C97-F7532E2482C7}.Release|x64.Build.0 = Release|Any CPU
 		{A06BE319-8084-43A0-9C97-F7532E2482C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{A06BE319-8084-43A0-9C97-F7532E2482C7}.Release|x86.Build.0 = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|x64.Build.0 = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Debug|x86.Build.0 = Debug|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|x64.ActiveCfg = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|x64.Build.0 = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{91D21FC5-8F14-4F30-AA16-6F46D2B449AD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

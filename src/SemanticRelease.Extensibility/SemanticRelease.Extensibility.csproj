@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SemanticRelease.Extensibility</PackageId>
+    <AssemblyName>SemanticRelease.Extensibility</AssemblyName>
   </PropertyGroup>
 
 </Project>

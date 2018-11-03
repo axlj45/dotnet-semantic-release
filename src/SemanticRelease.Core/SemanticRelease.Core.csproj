@@ -5,6 +5,8 @@
     <Description>Version package per semantic version specification.</Description>
     <Copyright>AJ Leonard</Copyright>
     <Version>1.3.0</Version>
+    <PackageId>SemanticRelease.Core</PackageId>
+    <AssemblyName>SemanticRelease.Core</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.3" />

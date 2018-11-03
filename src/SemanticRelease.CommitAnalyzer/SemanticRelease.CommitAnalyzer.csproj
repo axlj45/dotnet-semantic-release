@@ -6,6 +6,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SemanticRelease.CommitAnalyzer</PackageId>
+    <AssemblyName>SemanticRelease.CommitAnalyzer</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
