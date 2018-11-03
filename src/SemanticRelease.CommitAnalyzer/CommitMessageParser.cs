@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using SemanticRelease.Extensibility;
 using SemanticRelease.Extensibility.Model;
 
+[assembly: InternalsVisibleTo("SemanticRelease.CommitAnalyzer.Tests")]
 namespace SemanticRelease.CommitAnalyzer
 {
+
     internal class CommitMessageParser
     {
         private readonly IEnumerable<ReleaseCommit> _commitsSinceRelease;
