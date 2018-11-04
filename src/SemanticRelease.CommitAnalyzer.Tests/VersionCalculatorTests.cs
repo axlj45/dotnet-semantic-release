@@ -6,12 +6,14 @@ namespace SemanticRelease.CommitAnalyzer.Tests
 {
     public class VersionCalculatorTests
     {
+        IVersionCalculator systemUnderTest = new VersionCalculator();
+
         [Fact]
         public void MajorReleaseShouldIncrementMajorVersion()
         {
             var lastRelease = new Release("1.0.0", "DEADBEEF");
-            var versionCalculator = new VersionCalculator(lastRelease, ReleaseType.MAJOR);
-            var nextVersion = versionCalculator.GetNextVersion();
+
+            var nextVersion = systemUnderTest.GetNextVersion(lastRelease, ReleaseType.MAJOR);
 
             Assert.Equal("2.0.0", nextVersion.ToString());
         }
@@ -20,8 +22,8 @@ namespace SemanticRelease.CommitAnalyzer.Tests
         public void MinorReleaseShouldIncrementMinorVersion()
         {
             var lastRelease = new Release("1.0.0", "DEADBEEF");
-            var versionCalculator = new VersionCalculator(lastRelease, ReleaseType.MINOR);
-            var nextVersion = versionCalculator.GetNextVersion();
+
+            var nextVersion = systemUnderTest.GetNextVersion(lastRelease, ReleaseType.MINOR);
 
             Assert.Equal("1.1.0", nextVersion.ToString());
         }
@@ -31,8 +33,8 @@ namespace SemanticRelease.CommitAnalyzer.Tests
         public void PatchReleaseShouldIncrementPatchVersion()
         {
             var lastRelease = new Release("1.0.0", "DEADBEEF");
-            var versionCalculator = new VersionCalculator(lastRelease, ReleaseType.PATCH);
-            var nextVersion = versionCalculator.GetNextVersion();
+
+            var nextVersion = systemUnderTest.GetNextVersion(lastRelease, ReleaseType.PATCH);
 
             Assert.Equal("1.0.1", nextVersion.ToString());
         }
@@ -41,16 +43,16 @@ namespace SemanticRelease.CommitAnalyzer.Tests
         public void NoReleaseShouldThrowExeption()
         {
             var lastRelease = new Release("1.0.0", "DEADBEEF");
-            var versionCalculator = new VersionCalculator(lastRelease, ReleaseType.NONE);
-            Assert.Throws<NoOpReleaseException>(() => versionCalculator.GetNextVersion());
+
+            Assert.Throws<NoOpReleaseException>(() => systemUnderTest.GetNextVersion(lastRelease, ReleaseType.NONE));
         }
 
         [Fact]
         public void VersionShouldDefaultToOneO()
         {
             Release lastRelease = null;
-            var versionCalculator = new VersionCalculator(lastRelease, ReleaseType.MAJOR);
-            var nextVersion = versionCalculator.GetNextVersion();
+
+            var nextVersion = systemUnderTest.GetNextVersion(lastRelease, ReleaseType.MAJOR);
 
             Assert.Equal("1.0.0", nextVersion.ToString());
         }

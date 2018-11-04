@@ -6,7 +6,7 @@ using SemanticRelease.Extensibility;
 
 namespace SemanticRelease.CommitAnalyzer
 {
-    public class ProjectReleaser
+    public class ProjectReleaser : IProjectReleaseStrategy
     {
         private readonly ISourceRepositoryProvider<IRepository> _gitRepo;
         private readonly DotnetProjectWrapper _project;

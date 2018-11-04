@@ -13,6 +13,7 @@ namespace SemanticRelease.CommitAnalyzer
     {
         private ISourceRepositoryProvider _repository;
         private readonly IRepository _repoReference;
+        private readonly VersionCalculator _versionCalculator;
 
         public event EventHandler<CommitStatusEventArgs> CommitEvent;
 
@@ -20,6 +21,7 @@ namespace SemanticRelease.CommitAnalyzer
         {
             this._repository = repositoryProvider;
             this._repoReference = repositoryProvider.RepositoryRef as IRepository;
+            this._versionCalculator = new VersionCalculator();
         }
 
         public Release CalculateNextRelease()
@@ -36,7 +38,7 @@ namespace SemanticRelease.CommitAnalyzer
 
             SendEvent($"Release type: {releaseType}");
 
-            var nextVersion = new VersionCalculator(lastRelease, releaseType).GetNextVersion();
+            var nextVersion = _versionCalculator.GetNextVersion(lastRelease, releaseType);
 
             SendEvent($"Next version: {nextVersion}");
 

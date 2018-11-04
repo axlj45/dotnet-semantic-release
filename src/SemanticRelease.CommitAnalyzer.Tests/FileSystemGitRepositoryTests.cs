@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 using Xunit;
 
 namespace SemanticRelease.CommitAnalyzer.Tests
@@ -8,7 +8,7 @@ namespace SemanticRelease.CommitAnalyzer.Tests
         [Fact]
         public void CannotInitializeBadFileSystemGitRepository()
         {
-            Assert.Throws<Exception>(() => { new OnDiskGitRepository("trunk", "./"); });
+            Assert.Throws<FileNotFoundException>(() => new OnDiskGitRepository("trunk", "./"));
         }
 
         [Fact(Skip = "Not ready yet...")]

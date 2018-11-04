@@ -44,7 +44,7 @@ namespace SemanticRelease.CommitAnalyzer
             }
             catch (Exception ex)
             {
-                throw new Exception("Unable to locate git repository for project.", ex);
+                throw new FileNotFoundException("Unable to locate git repository for project.", ex);
             }
         }
     }

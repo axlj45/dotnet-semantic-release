@@ -5,22 +5,14 @@ using SemanticVersion = SemVer.Version;
 
 namespace SemanticRelease.CommitAnalyzer
 {
-    internal class VersionCalculator
+    internal class VersionCalculator : IVersionCalculator
     {
-        private readonly Release _lastRelease;
-        private readonly ReleaseType _releaseType;
 
-        public VersionCalculator(Release lastRelease, ReleaseType releaseType)
+        public SemanticReleaseVersion GetNextVersion(Release lastRelease, ReleaseType releaseType)
         {
-            _releaseType = releaseType;
-            _lastRelease = lastRelease;
-        }
+            var lastVersion = lastRelease?.Version;
 
-        public SemanticVersion GetNextVersion()
-        {
-            var lastVersion = _lastRelease?.Version;
-
-            if (lastVersion == null) return new SemanticVersion("1.0.0");
+            if (lastVersion == null) return new SemanticReleaseVersion("1.0.0");
 
             var testVersion = new SemanticVersion(lastVersion);
 
@@ -28,7 +20,7 @@ namespace SemanticRelease.CommitAnalyzer
             int nextMinor = testVersion.Minor;
             int nextPatch = testVersion.Patch;
 
-            switch (_releaseType)
+            switch (releaseType)
             {
                 case ReleaseType.MAJOR:
                     nextMajor += 1;
@@ -49,7 +41,9 @@ namespace SemanticRelease.CommitAnalyzer
                     throw new NoOpReleaseException(lastVersion);
             }
 
-            return new SemanticVersion($"{nextMajor}.{nextMinor}.{nextPatch}");
+            var newVersion = new SemanticVersion($"{nextMajor}.{nextMinor}.{nextPatch}");
+
+            return new SemanticReleaseVersion(newVersion.ToString());
         }
     }
 }

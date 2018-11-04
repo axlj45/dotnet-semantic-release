@@ -12,6 +12,7 @@ namespace SemanticRelease.CommitAnalyzer.Tests
 
             Assert.Equal("InMemory", repository.RepositoryPath);
             Assert.Equal("trunk", repository.ReleaseBranch);
+            Assert.NotNull(repository.RepositoryRef);
         }
     }
 }
