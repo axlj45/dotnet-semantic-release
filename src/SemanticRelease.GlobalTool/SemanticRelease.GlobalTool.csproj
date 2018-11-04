@@ -5,8 +5,8 @@
     <ToolCommandName>semantic-release</ToolCommandName>
     <PackageId>SemanticRelease.GlobalTool</PackageId>
     <AssemblyName>SemanticRelease.GlobalTool</AssemblyName>
-    <PackageVersion>1.3.0</PackageVersion>
-    <Version>1.3.0</Version>
+    <PackageVersion>2.1.0</PackageVersion>
+    <Version>2.1.0</Version>
     <Authors>AJ Leonard</Authors>
     <Description>Version package per semantic version specification.</Description>
     <Copyright>AJ Leonard</Copyright>
