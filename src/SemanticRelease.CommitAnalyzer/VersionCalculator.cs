@@ -1,4 +1,3 @@
-using System;
 using SemanticRelease.Extensibility;
 using SemanticRelease.Extensibility.Model;
 using SemanticVersion = SemVer.Version;

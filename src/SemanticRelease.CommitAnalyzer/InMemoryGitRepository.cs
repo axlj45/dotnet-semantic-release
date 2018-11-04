@@ -1,4 +1,3 @@
-using System;
 using LibGit2Sharp;
 using SemanticRelease.Extensibility;
 using SemanticRelease.Extensibility.Model;

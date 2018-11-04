@@ -4,7 +4,6 @@ namespace SemanticRelease.Extensibility.Model
     {
         public virtual string ReleaseBranch { get; }
         public virtual string RepositoryPath { get; }
-
         protected virtual object RepositoryRef { get; }
 
         protected AbstractReleaseRepository(string repositoryPath, string releaseBranchName, object repositoryReference)

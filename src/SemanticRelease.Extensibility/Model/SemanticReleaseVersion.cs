@@ -9,9 +9,6 @@ namespace SemanticRelease.Extensibility.Model
             this.Version = version;
         }
 
-        public override string ToString()
-        {
-            return this.Version;
-        }
+        public override string ToString() => this.Version;
     }
 }

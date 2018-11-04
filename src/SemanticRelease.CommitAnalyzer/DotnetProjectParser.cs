@@ -1,8 +1,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using SemanticRelease.Extensibility.Model;
-using LibGit2Sharp;
 using Microsoft.Build.Evaluation;
 
 namespace SemanticRelease.CommitAnalyzer
@@ -42,8 +40,6 @@ namespace SemanticRelease.CommitAnalyzer
 
             _project.Save();
         }
-
-
 
         private string FindProjPath(string currentDir, int maxDepth = 3, int currentDepth = 0)
         {

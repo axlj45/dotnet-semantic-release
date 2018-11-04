@@ -1,6 +1,5 @@
 using System;
 using SemanticRelease.Extensibility;
-using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
 
 namespace SemanticRelease.CommitAnalyzer

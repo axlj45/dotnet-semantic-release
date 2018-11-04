@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
 using SemanticRelease.Extensibility;
 
