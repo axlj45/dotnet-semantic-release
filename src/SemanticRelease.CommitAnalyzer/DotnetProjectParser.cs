@@ -2,16 +2,17 @@ using System;
 using System.IO;
 using System.Linq;
 using Microsoft.Build.Evaluation;
+using SemanticRelease.Extensibility;
 
 namespace SemanticRelease.CommitAnalyzer
 {
-    public class DotnetProjectWrapper
+    public class DotnetProjectParser : IProjectManager
     {
         public string ProjectPath { get; }
         private readonly Project _project;
         private string _version;
 
-        public DotnetProjectWrapper(string projectPath)
+        public DotnetProjectParser(string projectPath)
         {
             var workingDir = Path.GetDirectoryName(projectPath) + "/";
             ProjectPath = FindProjPath(projectPath);

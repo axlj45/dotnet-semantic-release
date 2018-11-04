@@ -14,7 +14,7 @@ namespace SemanticRelease.Core.CLI
         {
             var targetProject = TargetProject ?? Parent.TargetProject;
 
-            var project = new DotnetProjectWrapper(targetProject ?? System.Environment.CurrentDirectory);
+            var project = new DotnetProjectParser(targetProject ?? System.Environment.CurrentDirectory);
 
             Console.WriteLine(project.GetVersion());
 

@@ -30,7 +30,7 @@ namespace SemanticRelease.Core.CLI
                 commitAnalyzer.CommitEvent += OnCommitEvent;
                 var nextRelease = commitAnalyzer.CalculateNextRelease();
 
-                var project = new DotnetProjectWrapper(workingDir);
+                var project = new DotnetProjectParser(workingDir);
                 project.SetVersion(nextRelease.Version);
 
                 var releaser = new ProjectReleaser(project, repository);

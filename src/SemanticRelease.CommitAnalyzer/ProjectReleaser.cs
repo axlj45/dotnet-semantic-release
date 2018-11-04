@@ -8,13 +8,14 @@ namespace SemanticRelease.CommitAnalyzer
     public class ProjectReleaser : IProjectReleaseStrategy
     {
         private readonly ISourceRepositoryProvider<IRepository> _gitRepo;
-        private readonly DotnetProjectWrapper _project;
+        private readonly IProjectManager _project;
 
-        public ProjectReleaser(DotnetProjectWrapper project, ISourceRepositoryProvider repo)
+        public ProjectReleaser(IProjectManager project, ISourceRepositoryProvider repo)
         {
             _project = project;
             _gitRepo = (ISourceRepositoryProvider<IRepository>)repo;
         }
+
         public void PrepareForRelease()
         {
             var repo = _gitRepo.RepositoryRef;
