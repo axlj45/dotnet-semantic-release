@@ -9,11 +9,13 @@ using SemanticVersion = SemVer.Version;
 
 namespace SemanticRelease.CommitAnalyzer
 {
-    public class CommitAnalyzer : ICommitAnalyzer
+    public class DefaultCommitAnalyzer : ICommitAnalyzer
     {
         private ReleaseRepository _repository;
 
-        public CommitAnalyzer()
+        public event EventHandler<CommitStatusEventArgs> CommitEvent;
+
+        public DefaultCommitAnalyzer()
         {
             this._repository = new GitRepositorySingleton().GetRepository();
         }
@@ -24,19 +26,24 @@ namespace SemanticRelease.CommitAnalyzer
 
             var msg = "This is the first release.";
 
-            Console.WriteLine($"Last Release: {lastRelease?.Version.ToString() ?? msg}");
+            SendEvent($"Last Release: {lastRelease?.Version.ToString() ?? msg}");
 
             var commitsSinceRelease = CommitsSinceLastRelease(lastRelease).ToList();
 
             var releaseType = new CommitMessageParser(commitsSinceRelease).GetReleaseType();
 
-            Console.WriteLine($"Release type: {releaseType}");
+            SendEvent($"Release type: {releaseType}");
 
             var nextVersion = new VersionCalculator(lastRelease, releaseType).GetNextVersion();
 
-            Console.WriteLine($"Next version: {nextVersion}");
+            SendEvent($"Next version: {nextVersion}");
 
             return new Release(nextVersion.ToString(), null);
+        }
+
+        private void SendEvent(string message)
+        {
+            CommitEvent?.Invoke(this, new CommitStatusEventArgs(message));
         }
 
         private IEnumerable<ReleaseCommit> CommitsSinceLastRelease(Release lastRelease)

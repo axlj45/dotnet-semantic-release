@@ -2,6 +2,7 @@ using System;
 using SemanticRelease.CommitAnalyzer;
 using SemanticRelease.Extensibility.Model;
 using McMaster.Extensions.CommandLineUtils;
+using SemanticRelease.Extensibility;
 
 namespace SemanticRelease.Core.CLI
 {
@@ -26,7 +27,8 @@ namespace SemanticRelease.Core.CLI
                 var preconditions = new DefaultPreConditions();
                 preconditions.Verify();
 
-                var commitAnalyzer = new CommitAnalyzer.CommitAnalyzer();
+                var commitAnalyzer = new DefaultCommitAnalyzer();
+                commitAnalyzer.CommitEvent += OnCommitEvent;
                 var nextRelease = commitAnalyzer.CalculateNextRelease();
 
                 var project = new DotnetProjectWrapper(workingDir);
@@ -47,6 +49,11 @@ namespace SemanticRelease.Core.CLI
             }
 
             return 0;
+        }
+
+        private void OnCommitEvent(object sender, CommitStatusEventArgs e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 }
