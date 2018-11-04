@@ -7,7 +7,7 @@ using SemanticRelease.Extensibility.Model;
 [assembly: InternalsVisibleTo("SemanticRelease.CommitAnalyzer.Tests")]
 namespace SemanticRelease.CommitAnalyzer
 {
-
+ 
     internal class CommitMessageParser
     {
         private readonly IEnumerable<ReleaseCommit> _commitsSinceRelease;
@@ -15,7 +15,6 @@ namespace SemanticRelease.CommitAnalyzer
         public CommitMessageParser(IEnumerable<ReleaseCommit> commitsSinceRelease)
         {
             _commitsSinceRelease = commitsSinceRelease;
-
         }
 
         public ReleaseType GetReleaseType()

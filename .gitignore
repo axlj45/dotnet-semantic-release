@@ -3,3 +3,6 @@ bin/
 .vscode/
 *.sh
 packages/
+lcov.info
+coverage.info
+coverage.xml
