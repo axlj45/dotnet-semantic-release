@@ -1,21 +1,28 @@
 namespace SemanticRelease.Extensibility.Model
 {
-    public class ReleaseRepository
+    public abstract class AbstractReleaseRepository
     {
-        public string ReleaseBranch { get; }
-        public string RepositoryPath { get; }
-        private object _repositoryReference;
+        public virtual string ReleaseBranch { get; }
+        public virtual string RepositoryPath { get; }
 
-        public ReleaseRepository(string repositoryPath, string releaseBranchName, object repositoryReference)
+        protected virtual object RepositoryRef { get; }
+
+        protected AbstractReleaseRepository(string repositoryPath, string releaseBranchName, object repositoryReference)
         {
-            this.ReleaseBranch = releaseBranchName;
             this.RepositoryPath = repositoryPath;
-            _repositoryReference = repositoryReference;
+            this.ReleaseBranch = releaseBranchName;
+            this.RepositoryRef = repositoryReference;
         }
+    }
+    public class ReleaseRepository<T> : AbstractReleaseRepository
+    {
 
-        public T GetRepositoryReference<T>()
+        public ReleaseRepository(string repositoryPath, string releaseBranchName, T repositoryReference)
+        : base(repositoryPath, releaseBranchName, repositoryReference) { }
+
+        public T GetRepositoryReference()
         {
-            return (T)_repositoryReference;
+            return (T)RepositoryRef;
         }
     }
 }

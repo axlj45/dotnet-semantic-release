@@ -7,16 +7,16 @@ namespace SemanticRelease.CommitAnalyzer
 {
     public class DefaultPreConditions : IPreConditionVerifier
     {
-        private ReleaseRepository _repository;
+        private readonly ISourceRepositoryProvider _repository;
 
-        public DefaultPreConditions()
+        public DefaultPreConditions(ISourceRepositoryProvider repositoryProvider)
         {
-            this._repository = new GitRepositorySingleton().GetRepository();
+            this._repository = repositoryProvider;
         }
 
         public void Verify()
         {
-            var repo = _repository.GetRepositoryReference<Repository>();
+            var repo = _repository.RepositoryRef as IRepository;
 
             if (!repo.Head.FriendlyName.Equals(_repository.ReleaseBranch))
             {

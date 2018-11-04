@@ -21,20 +21,19 @@ namespace SemanticRelease.Core.CLI
 
             try
             {
-                var repository = new GitRepositorySingleton();
-                var releaseRepository = repository.InitializeRepository(workingDir, releaseBranch);
+                var repository = new OnDiskGitRepository(workingDir, releaseBranch);
 
-                var preconditions = new DefaultPreConditions();
+                var preconditions = new DefaultPreConditions(repository);
                 preconditions.Verify();
 
-                var commitAnalyzer = new DefaultCommitAnalyzer();
+                var commitAnalyzer = new DefaultCommitAnalyzer(repository);
                 commitAnalyzer.CommitEvent += OnCommitEvent;
                 var nextRelease = commitAnalyzer.CalculateNextRelease();
 
                 var project = new DotnetProjectWrapper(workingDir);
                 project.SetVersion(nextRelease.Version);
 
-                var releaser = new ProjectReleaser(project);
+                var releaser = new ProjectReleaser(project, repository);
                 releaser.PrepareForRelease();
             }
             catch (NoOpReleaseException ex)

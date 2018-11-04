@@ -11,13 +11,15 @@ namespace SemanticRelease.CommitAnalyzer
 {
     public class DefaultCommitAnalyzer : ICommitAnalyzer
     {
-        private ReleaseRepository _repository;
+        private ISourceRepositoryProvider _repository;
+        private readonly IRepository _repoReference;
 
         public event EventHandler<CommitStatusEventArgs> CommitEvent;
 
-        public DefaultCommitAnalyzer()
+        public DefaultCommitAnalyzer(ISourceRepositoryProvider repositoryProvider)
         {
-            this._repository = new GitRepositorySingleton().GetRepository();
+            this._repository = repositoryProvider;
+            this._repoReference = repositoryProvider.RepositoryRef as IRepository;
         }
 
         public Release CalculateNextRelease()
@@ -48,12 +50,10 @@ namespace SemanticRelease.CommitAnalyzer
 
         private IEnumerable<ReleaseCommit> CommitsSinceLastRelease(Release lastRelease)
         {
-            var repository = _repository.GetRepositoryReference<Repository>();
-
-            var lastReleaseCommit = repository.Commits.FirstOrDefault(o => o.Sha.Equals(lastRelease?.Sha));
+            var lastReleaseCommit = _repoReference.Commits.FirstOrDefault(o => o.Sha.Equals(lastRelease?.Sha));
             int index = 0;
 
-            foreach (var commit in repository.Commits)
+            foreach (var commit in _repoReference.Commits)
             {
                 if (commit.Sha.Equals(lastReleaseCommit?.Sha)) break;
 
@@ -63,9 +63,7 @@ namespace SemanticRelease.CommitAnalyzer
 
         private Release GetLastRelease()
         {
-            var repository = _repository.GetRepositoryReference<Repository>();
-
-            var lastRelease = repository.Tags.Where(o =>
+            var lastRelease = _repoReference.Tags.Where(o =>
              {
                  try
                  {

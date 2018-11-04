@@ -2,22 +2,23 @@ using System;
 using System.IO;
 using SemanticRelease.Extensibility.Model;
 using LibGit2Sharp;
+using SemanticRelease.Extensibility;
 
 namespace SemanticRelease.CommitAnalyzer
 {
     public class ProjectReleaser
     {
-        private readonly ReleaseRepository _gitRepo;
+        private readonly ISourceRepositoryProvider<IRepository> _gitRepo;
         private readonly DotnetProjectWrapper _project;
 
-        public ProjectReleaser(DotnetProjectWrapper project)
+        public ProjectReleaser(DotnetProjectWrapper project, ISourceRepositoryProvider repo)
         {
             _project = project;
-            _gitRepo = new GitRepositorySingleton().GetRepository();
+            _gitRepo = (ISourceRepositoryProvider<IRepository>)repo;
         }
         public void PrepareForRelease()
         {
-            var repo = _gitRepo.GetRepositoryReference<Repository>();
+            var repo = _gitRepo.RepositoryRef;
 
             int workDirLength = Directory.GetParent(_gitRepo.RepositoryPath).FullName.Length;
             string workingPath = Path.GetFullPath(_project.ProjectPath).Substring(workDirLength + 1);
