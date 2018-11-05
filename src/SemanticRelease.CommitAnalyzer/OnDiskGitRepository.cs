@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using System.IO.Abstractions;
 using System.Linq;
 using LibGit2Sharp;
 using SemanticRelease.Extensibility;
@@ -19,8 +19,12 @@ namespace SemanticRelease.CommitAnalyzer
 
         object ISourceRepositoryProvider.RepositoryRef => _repository;
 
-        public OnDiskGitRepository(string repoPath, string releaseBranch)
+        private DirectoryBase Directory { get; }
+
+        public OnDiskGitRepository(string repoPath, string releaseBranch, IFileSystem fileSystem)
         {
+            Directory = fileSystem.Directory;
+
             var gitPath = FindGitPath(repoPath);
             var repoRef = new Repository(gitPath);
 
@@ -44,7 +48,7 @@ namespace SemanticRelease.CommitAnalyzer
             }
             catch (Exception ex)
             {
-                throw new FileNotFoundException("Unable to locate git repository for project.", ex);
+                throw new System.IO.FileNotFoundException("Unable to locate git repository for project.", ex);
             }
         }
     }

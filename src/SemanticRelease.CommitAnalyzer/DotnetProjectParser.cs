@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using System.IO.Abstractions;
 using System.Linq;
 using Microsoft.Build.Evaluation;
 using SemanticRelease.Extensibility;
@@ -12,8 +12,14 @@ namespace SemanticRelease.CommitAnalyzer
         private readonly Project _project;
         private string _version;
 
-        public DotnetProjectParser(string projectPath)
+        private PathBase Path { get; }
+        private DirectoryBase Directory { get; }
+
+        public DotnetProjectParser(string projectPath, IFileSystem fileSystem)
         {
+            Path = fileSystem.Path;
+            Directory = fileSystem.Directory;
+
             var workingDir = Path.GetDirectoryName(projectPath) + "/";
             ProjectPath = FindProjPath(projectPath);
             _project = DotnetCoreBuildTools.GetCoreProject(ProjectPath);

@@ -3,16 +3,24 @@ using SemanticRelease.CommitAnalyzer;
 using SemanticRelease.Extensibility.Model;
 using McMaster.Extensions.CommandLineUtils;
 using SemanticRelease.Extensibility;
+using System.IO.Abstractions;
 
 namespace SemanticRelease.Core.CLI
 {
     [Command(Description = "Create new version and prepare for release")]
     public class ReleaseCli : ToolCliBase
     {
+        private readonly FileSystem _fileSystem;
+
         private SemanticReleaseEntry Parent { get; set; }
 
         [Option("-f|--fail-on-no-release <branch>", Description = "Return non-zero exit code when no release is required.")]
         public bool ThrowOnNoOp { get; set; }
+
+        public ReleaseCli()
+        {
+            _fileSystem = new FileSystem();
+        }
 
         protected override int OnExecute(CommandLineApplication app)
         {
@@ -21,7 +29,9 @@ namespace SemanticRelease.Core.CLI
 
             try
             {
-                var repository = new OnDiskGitRepository(workingDir, releaseBranch);
+
+
+                var repository = new OnDiskGitRepository(workingDir, releaseBranch, _fileSystem);
 
                 var preconditions = new DefaultPreConditions(repository);
                 preconditions.Verify();
@@ -30,10 +40,10 @@ namespace SemanticRelease.Core.CLI
                 commitAnalyzer.CommitEvent += OnCommitEvent;
                 var nextRelease = commitAnalyzer.CalculateNextRelease();
 
-                var project = new DotnetProjectParser(workingDir);
+                var project = new DotnetProjectParser(workingDir, _fileSystem);
                 project.SetVersion(nextRelease.Version);
 
-                var releaser = new ProjectReleaser(project, repository);
+                var releaser = new ProjectReleaser(project, repository, _fileSystem);
                 releaser.PrepareForRelease();
             }
             catch (NoOpReleaseException ex)

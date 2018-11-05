@@ -1,5 +1,5 @@
 using System;
-using System.IO;
+using System.IO.Abstractions;
 using LibGit2Sharp;
 using SemanticRelease.Extensibility;
 
@@ -10,8 +10,14 @@ namespace SemanticRelease.CommitAnalyzer
         private readonly ISourceRepositoryProvider<IRepository> _gitRepo;
         private readonly IProjectManager _project;
 
-        public ProjectReleaser(IProjectManager project, ISourceRepositoryProvider repo)
+        private DirectoryBase Directory { get; }
+        private PathBase Path { get; }
+
+        public ProjectReleaser(IProjectManager project, ISourceRepositoryProvider repo, IFileSystem fileSystem)
         {
+            Directory = fileSystem.Directory;
+            Path = fileSystem.Path;
+
             _project = project;
             _gitRepo = (ISourceRepositoryProvider<IRepository>)repo;
         }
