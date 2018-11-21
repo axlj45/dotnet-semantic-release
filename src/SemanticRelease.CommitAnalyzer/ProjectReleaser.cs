@@ -13,7 +13,10 @@ namespace SemanticRelease.CommitAnalyzer
         private DirectoryBase Directory { get; }
         private PathBase Path { get; }
 
-        public ProjectReleaser(IProjectManager project, ISourceRepositoryProvider repo, IFileSystem fileSystem)
+        public ProjectReleaser(
+            IProjectManager project,
+            ISourceRepositoryProvider repo,
+            IFileSystem fileSystem)
         {
             Directory = fileSystem.Directory;
             Path = fileSystem.Path;
