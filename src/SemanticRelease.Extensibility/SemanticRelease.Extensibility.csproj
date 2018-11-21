@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>A. Leonard</Authors>
+    <Version>2.1.0</Version>
+    <Description>Version package per semantic version specification.</Description>
     <PackageId>SemanticRelease.Extensibility</PackageId>
     <AssemblyName>SemanticRelease.Extensibility</AssemblyName>
   </PropertyGroup>

@@ -6,10 +6,9 @@
     <PackageId>SemanticRelease.Tool</PackageId>
     <AssemblyName>dotnet-semanticrelease</AssemblyName>
     <PackageVersion>2.1.0</PackageVersion>
+    <Authors>A. Leonard</Authors>
     <Version>2.1.0</Version>
-    <Authors>AJ Leonard</Authors>
     <Description>Version package per semantic version specification.</Description>
-    <Copyright>AJ Leonard</Copyright>
     <PackageTags>semantic-versioning semantic-release</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
