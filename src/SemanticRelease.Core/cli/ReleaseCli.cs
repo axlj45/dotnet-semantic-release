@@ -29,8 +29,6 @@ namespace SemanticRelease.Core.CLI
 
             try
             {
-
-
                 var repository = new OnDiskGitRepository(workingDir, releaseBranch, _fileSystem);
 
                 var preconditions = new DefaultPreConditions(repository);
