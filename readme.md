@@ -4,6 +4,8 @@ Inspired by the [Semantic Release][0] module for NodeJS, the intent is to comple
 
 **Note**: This package is still in a very early phase of development.  Pull requests are welcome.
 
+[![Build Status](https://travis-ci.org/axlj45/dotnet-semantic-release.svg?branch=trunk)](https://travis-ci.org/axlj45/dotnet-semantic-release)
+
 ## Usage
 
 ### Global Tool
