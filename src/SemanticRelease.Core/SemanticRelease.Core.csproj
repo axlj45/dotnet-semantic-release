@@ -1,18 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>A. Leonard</Authors>    
     <Version>2.1.0</Version>
-    <Description>Version package per semantic version specification.</Description>
     <PackageId>SemanticRelease.Core</PackageId>
     <AssemblyName>SemanticRelease.Core</AssemblyName>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>A. Leonard</Authors>
+    <PackageLicenseUrl>https://github.com/axlj45/dotnet-semantic-release/blob/trunk/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Core libraries for the Semantic Release Tool and Global Tool</Description>
+    <PackageTags>semantic-versioning semantic-release</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/axlj45/dotnet-semantic-release</RepositoryUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.3" />
     <PackageReference Include="Microsoft.Build" Version="15.8.166" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.8.166" />
     <PackageReference Include="System.IO.Abstractions" Version="2.1.0.256" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\SemanticRelease.Extensibility\SemanticRelease.Extensibility.csproj" />
     <ProjectReference Include="..\SemanticRelease.CommitAnalyzer\SemanticRelease.CommitAnalyzer.csproj" />

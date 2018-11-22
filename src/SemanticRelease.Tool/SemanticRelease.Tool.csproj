@@ -1,16 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <OutputType>Exe</OutputType>
     <PackageId>SemanticRelease.Tool</PackageId>
     <AssemblyName>dotnet-semanticrelease</AssemblyName>
     <PackageVersion>2.1.0</PackageVersion>
-    <Authors>A. Leonard</Authors>
     <Version>2.1.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>A. Leonard</Authors>
+    <PackageLicenseUrl>https://github.com/axlj45/dotnet-semantic-release/blob/trunk/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Version package per semantic version specification.</Description>
     <PackageTags>semantic-versioning semantic-release</PackageTags>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/axlj45/dotnet-semantic-release</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

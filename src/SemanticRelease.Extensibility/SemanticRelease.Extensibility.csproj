@@ -1,12 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>A. Leonard</Authors>
     <Version>2.1.0</Version>
-    <Description>Version package per semantic version specification.</Description>
     <PackageId>SemanticRelease.Extensibility</PackageId>
     <AssemblyName>SemanticRelease.Extensibility</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Authors>A. Leonard</Authors>
+    <PackageLicenseUrl>https://github.com/axlj45/dotnet-semantic-release/blob/trunk/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Library for extending dotnet-semanticrelease.</Description>
+    <PackageTags>semantic-versioning semantic-release</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/axlj45/dotnet-semantic-release</RepositoryUrl>
+  </PropertyGroup>
 </Project>
