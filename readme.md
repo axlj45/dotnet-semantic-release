@@ -2,7 +2,7 @@
 
 Inspired by the [Semantic Release][0] module for NodeJS, the intent is to completely remove manual intervention from the versioning process by automating the [Semantic Versioning][1] specification during build/release time.
 
-**Note**: This package is still in a very early phase of development and not in NuGet yet.  Pull requests are welcome.
+**Note**: This package is still in a very early phase of development.  Pull requests are welcome.
 
 ## Usage
 
@@ -25,7 +25,7 @@ Add the following to your `.csproj` file:
 
 ```xml
   <ItemGroup>
-    <DotNetCliToolReference Include="SemanticRelease.Tool" Version="1.3.0" />
+    <DotNetCliToolReference Include="SemanticRelease.Tool" Version="2.1.0" />
   </ItemGroup>
 ```
 
