@@ -11,10 +11,10 @@ dotnet pack --configuration=release $SRC_DIR/SemanticRelease.Extensibility/*.csp
 dotnet pack --configuration=release $SRC_DIR/SemanticRelease.CommitAnalyzer/*.csproj
 dotnet pack --configuration=release $SRC_DIR/SemanticRelease.Core/*.csproj
 dotnet build --configuration=release $SRC_DIR/SemanticRelease.Tool/*.csproj
-cp $SRC_DIR/**/bin/Release/*.nupkg $PKG_DIR
+cp $SRC_DIR/**/bin/release/*.nupkg $PKG_DIR
 
 dotnet build --configuration=release $SRC_DIR/SemanticRelease.GlobalTool/*.csproj
-cp $SRC_DIR/SemanticRelease.GlobalTool/bin/Release/*.nupkg $PKG_DIR
+cp $SRC_DIR/SemanticRelease.GlobalTool/bin/release/*.nupkg $PKG_DIR
 
 
 # dotnet tool uninstall --global SemanticRelease.GlobalTool
