@@ -1,0 +1,7 @@
+language: csharp
+solution: src/dotnet-semantic-release.sln
+mono: none
+dotnet: 2.1.500
+script:
+  - ./build/build.sh $(pwd)
+  - ./build/test.sh $(pwd)
