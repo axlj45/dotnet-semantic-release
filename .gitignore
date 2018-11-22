@@ -1,8 +1,35 @@
-obj/
-bin/
-.vscode/
-*.sh
-packages/
-lcov.info
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Pp]ackages/
+[Rr]eports/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
 coverage.info
 coverage.xml
+
+# Visual Studio 2015
+.vs/
