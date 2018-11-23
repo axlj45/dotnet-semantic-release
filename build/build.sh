@@ -15,7 +15,3 @@ cp $SRC_DIR/**/bin/release/*.nupkg $PKG_DIR
 
 dotnet build --configuration=release $SRC_DIR/SemanticRelease.GlobalTool/*.csproj
 cp $SRC_DIR/SemanticRelease.GlobalTool/bin/release/*.nupkg $PKG_DIR
-
-
-# dotnet tool uninstall --global SemanticRelease.GlobalTool
-# dotnet tool install --global SemanticRelease.GlobalTool

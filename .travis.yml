@@ -2,6 +2,8 @@ language: csharp
 solution: src/dotnet-semantic-release.sln
 mono: none
 dotnet: 2.1.500
+install:
+  - dotnet restore src
 script:
-  - ./build/build.sh $(pwd)
   - ./build/test.sh $(pwd)
+  - ./build/build.sh $(pwd)
