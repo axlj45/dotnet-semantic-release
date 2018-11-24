@@ -14,7 +14,7 @@ namespace SemanticRelease.Core.CLI
 
         private SemanticReleaseEntry Parent { get; set; }
 
-        [Option("-f|--fail-on-no-release <branch>", Description = "Return non-zero exit code when no release is required.")]
+        [Option("-f|--fail-on-no-release",  Description = "Return non-zero exit code when no release is required.")]
         public bool ThrowOnNoOp { get; set; }
 
         public ReleaseCli()
