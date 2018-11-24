@@ -1,6 +1,7 @@
 using System;
 using SemanticRelease.Extensibility;
 using LibGit2Sharp;
+using SemanticRelease.Extensibility.Model;
 
 namespace SemanticRelease.CommitAnalyzer
 {
@@ -15,7 +16,9 @@ namespace SemanticRelease.CommitAnalyzer
 
         public void Verify()
         {
-            var repo = _repository.RepositoryRef as IRepository;
+            var repoRef = _repository.RepositoryRef as ReleaseRepository<IRepository>;
+
+            var repo = repoRef.GetRepositoryReference();
 
             if (!repo.Head.FriendlyName.Equals(_repository.ReleaseBranch))
             {
