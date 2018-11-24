@@ -3,6 +3,7 @@ solution: src/dotnet-semantic-release.sln
 mono: none
 dotnet: 2.1.500
 install:
+  - mkdir packages
   - dotnet restore src
 script:
   - ./build/test.sh $(pwd)
