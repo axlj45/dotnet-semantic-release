@@ -31,7 +31,7 @@ namespace SemanticRelease.CommitAnalyzer
             _repository = new ReleaseRepository<IRepository>(gitPath, releaseBranch, repoRef);
         }
 
-        private string FindGitPath(string currentPath, int maxDepth = 3, int currentDepth = 0)
+        private string FindGitPath(string currentPath, int maxDepth = 4, int currentDepth = 0)
         {
             try
             {
