@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <PackageId>SemanticRelease.Core</PackageId>
     <AssemblyName>SemanticRelease.Core</AssemblyName>
   </PropertyGroup>
