@@ -19,7 +19,10 @@ namespace SemanticRelease.CommitAnalyzer
         public DefaultCommitAnalyzer(ISourceRepositoryProvider repositoryProvider)
         {
             this._repository = repositoryProvider;
-            this._repoReference = repositoryProvider.RepositoryRef as IRepository;
+
+            var repoRef = _repository.RepositoryRef as ReleaseRepository<IRepository>;
+            this._repoReference = repoRef.GetRepositoryReference();
+            
             this._versionCalculator = new VersionCalculator();
         }
 
