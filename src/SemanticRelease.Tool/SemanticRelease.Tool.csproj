@@ -4,11 +4,10 @@
     <OutputType>Exe</OutputType>
     <PackageId>SemanticRelease.Tool</PackageId>
     <AssemblyName>dotnet-semanticrelease</AssemblyName>
-    <PackageVersion>2.1.0</PackageVersion>
-    <Version>2.1.0</Version>
+    <PackageVersion>2.1.1</PackageVersion>
+    <Version>2.1.1</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
-
   <PropertyGroup>
     <Authors>A. Leonard</Authors>
     <PackageLicenseUrl>https://github.com/axlj45/dotnet-semantic-release/blob/trunk/LICENSE</PackageLicenseUrl>
@@ -18,7 +17,6 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/axlj45/dotnet-semantic-release</RepositoryUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\SemanticRelease.Core\SemanticRelease.Core.csproj" />
   </ItemGroup>
