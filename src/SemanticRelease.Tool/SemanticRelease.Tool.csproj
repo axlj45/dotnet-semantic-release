@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <PackageId>SemanticRelease.Tool</PackageId>
     <AssemblyName>dotnet-semanticrelease</AssemblyName>
-    <PackageVersion>2.1.2</PackageVersion>
-    <Version>2.1.2</Version>
+    <PackageVersion>2.1.3</PackageVersion>
+    <Version>2.1.3</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup>
