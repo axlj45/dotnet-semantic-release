@@ -9,6 +9,7 @@ namespace SemanticRelease.Core.CLI
     [VersionOptionFromMember("--version", MemberName = nameof(GetVersion))]
     [Subcommand("release", typeof(ReleaseCli))]
     [Subcommand("project-version", typeof(CurrentVersionCli))]
+    [Subcommand("publish", typeof(PublishCli))]
     public class SemanticReleaseEntry : ToolCliBase
     {
         private static string GetVersion()
