@@ -27,7 +27,7 @@ Add the following to your `.csproj` file:
 
 ```xml
   <ItemGroup>
-    <DotNetCliToolReference Include="SemanticRelease.Tool" Version="2.1.0" />
+    <DotNetCliToolReference Include="SemanticRelease.Tool" Version="2.1.3" />
   </ItemGroup>
 ```
 
