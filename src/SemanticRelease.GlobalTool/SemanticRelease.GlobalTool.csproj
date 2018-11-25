@@ -5,8 +5,8 @@
     <ToolCommandName>semantic-release</ToolCommandName>
     <PackageId>SemanticRelease.GlobalTool</PackageId>
     <AssemblyName>SemanticRelease.GlobalTool</AssemblyName>
-    <PackageVersion>2.1.4</PackageVersion>
-    <Version>2.1.4</Version>
+    <PackageVersion>2.2.0</PackageVersion>
+    <Version>2.2.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackAsTool>True</PackAsTool>
   </PropertyGroup>
