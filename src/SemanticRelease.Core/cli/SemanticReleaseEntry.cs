@@ -12,7 +12,7 @@ namespace SemanticRelease.Core.CLI
     public class SemanticReleaseEntry : ToolCliBase
     {
         private static string GetVersion()
-            => typeof(SemanticReleaseEntry).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+            => Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
         protected override int OnExecute(CommandLineApplication app)
         {
