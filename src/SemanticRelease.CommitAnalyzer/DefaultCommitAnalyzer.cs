@@ -65,7 +65,7 @@ namespace SemanticRelease.CommitAnalyzer
             }
         }
 
-        private Release GetLastRelease()
+        public Release GetLastRelease()
         {
             var lastRelease = _repoReference.Tags.Where(o =>
              {
