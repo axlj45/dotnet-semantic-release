@@ -2,6 +2,6 @@ namespace SemanticRelease.Extensibility
 {
     public interface IPreConditionVerifier
     {
-        void Verify();
+        void Verify(bool detachedHead);
     }
 }

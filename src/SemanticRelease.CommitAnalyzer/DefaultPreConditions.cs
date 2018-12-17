@@ -14,18 +14,18 @@ namespace SemanticRelease.CommitAnalyzer
             this._repository = repositoryProvider;
         }
 
-        public void Verify()
+        public void Verify(bool detachedHead)
         {
             var repoRef = _repository.RepositoryRef as ReleaseRepository<IRepository>;
 
             var repo = repoRef.GetRepositoryReference();
 
-            if (!repo.Head.FriendlyName.Equals(_repository.ReleaseBranch))
+            if (!detachedHead && !repo.Head.FriendlyName.Equals(_repository.ReleaseBranch))
             {
                 throw new Exception($"Wrong Branch: {repo.Head.FriendlyName} must be {_repository.ReleaseBranch} to deploy");
             }
 
-            if (!repo.Head.IsTracking)
+            if (!detachedHead && !repo.Head.IsTracking)
             {
                 throw new Exception("No remote found for current branch.");
             }
