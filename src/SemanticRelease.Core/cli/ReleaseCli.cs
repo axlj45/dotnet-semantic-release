@@ -17,7 +17,7 @@ namespace SemanticRelease.Core.CLI
         [Option("-f|--fail-on-no-release",  Description = "Return non-zero exit code when no release is required.")]
         public bool ThrowOnNoOp { get; set; }
 
-        [Option("-d|--detachedHead", Description = "Work with a detached HEAD (for example, when building on Azure pipelines)")]
+        [Option("-d|--detached-head", Description = "Work with a detached HEAD (for example, when building on Azure pipelines)")]
         public bool DetachedHead { get; set; }
 
         public ReleaseCli()
