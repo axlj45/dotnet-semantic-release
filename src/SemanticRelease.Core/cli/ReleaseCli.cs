@@ -17,6 +17,9 @@ namespace SemanticRelease.Core.CLI
         [Option("-f|--fail-on-no-release",  Description = "Return non-zero exit code when no release is required.")]
         public bool ThrowOnNoOp { get; set; }
 
+        [Option("-d|--detached-head", Description = "Work with a detached HEAD (for example, when building on Azure pipelines)")]
+        public bool DetachedHead { get; set; }
+
         public ReleaseCli()
         {
             _fileSystem = new FileSystem();
@@ -32,7 +35,7 @@ namespace SemanticRelease.Core.CLI
                 var repository = new OnDiskGitRepository(workingDir, releaseBranch, _fileSystem);
 
                 var preconditions = new DefaultPreConditions(repository);
-                preconditions.Verify();
+                preconditions.Verify(DetachedHead);
 
                 var commitAnalyzer = new DefaultCommitAnalyzer(repository);
                 commitAnalyzer.CommitEvent += OnCommitEvent;
